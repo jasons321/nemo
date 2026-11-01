@@ -1,0 +1,24 @@
+# Tickers to track. Aliases are used to build the news search query and,
+# later, for relevance filtering (Google news is often about YouTube, Waymo, etc.).
+tickers:
+  GOOGL:
+    name: Alphabet
+    aliases: ["Alphabet", "Google"]
+  MSFT:
+    name: Microsoft
+    aliases: ["Microsoft"]
+  NVDA:
+    name: Nvidia
+    aliases: ["Nvidia"]
+
+news:
+  lookback_days: 7        # how far back the RSS search goes
+  max_per_ticker: 50
+
+llm:
+  host: http://localhost:11434   # Ollama default
+  model: qwen2.5:3b              # swap for whatever runs well on your machine
+  prompt_version: v1             # bump when you change the prompt; old scores stay cached
+  timeout_s: 120
+
+db_path: data/newsdesk.db
